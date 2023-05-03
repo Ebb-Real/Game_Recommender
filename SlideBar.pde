@@ -4,7 +4,7 @@ class SlideBar{
   float size;
   float maxPriority;
   
-  int currentPriority;
+  public int currentPriority;
   
   float dotX;
   float dotY;
