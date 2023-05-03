@@ -2,7 +2,7 @@ float background_r = 0;
 float background_g = 0;
 float background_b = 0;
 
-SlideBar CombatSlider = new SlideBar(100, 100, 300, 5);dsad
+SlideBar CombatSlider = new SlideBar(100, 100, 300, 5);
 
 void setup(){
   size(1500, 800);
