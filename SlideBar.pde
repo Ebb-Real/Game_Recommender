@@ -4,7 +4,8 @@ class SlideBar{
   float size;
   float maxPriority;
   
-  int currentPriority;
+  int currentPriority = 1;
+  float currentPriorityTextSize = 30;
   
   float dotX;
   float dotY;
@@ -18,8 +19,8 @@ class SlideBar{
     size = objSize;
     maxPriority = objMaxPriority;
     
-    dotX = objX + objX/20;
-    dotY = objY + objY/20;
+    dotX = objX + size/20;
+    dotY = objY + size/60;
     dotR = objSize/10;
   }
   
@@ -27,7 +28,10 @@ class SlideBar{
     rect(x, y, size, size/30);
     circle(dotX, dotY, dotR);
     if(currentPriority != 0){
-      text(currentPriority, x + size + 100, y);
+      push();
+      textSize(currentPriorityTextSize);
+      text(currentPriority, x + size + 50, y + currentPriorityTextSize/2);
+      pop();
     }
   }
   
