@@ -1,6 +1,7 @@
 float background_r = 0;
 float background_g = 0;
 float background_b = 0;
+float gdsfælge;
 
 SlideBar CombatSlider = new SlideBar(100, 100, 300, 5);
 
