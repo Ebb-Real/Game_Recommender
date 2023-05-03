@@ -5,7 +5,7 @@ float background_b = 0;
 SlideBar CombatSlider = new SlideBar(100, 100, 300, 5);
 
 void setup(){
-  size(1500, 800);fasjlk.dn,
+  size(1500, 800);
 }
 
 void draw(){
