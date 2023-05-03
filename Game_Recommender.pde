@@ -17,6 +17,7 @@ void draw(){
   StoryRoleplaySlider.draw();
   MultiplayerSlider.draw();
   ManagementSlider.draw();
+  println(stardewValley[0]);
 }
 
 void mouseDragged(){
