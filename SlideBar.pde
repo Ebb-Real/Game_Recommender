@@ -4,16 +4,24 @@ class SlideBar{
   float size;
   float maxPriority;
   
+  //Værdien som slideren sidder på, altså vægten
   int currentPriority = 1;
   float currentPriorityTextSize = 30;
   
+  //Slider-priks værdier
   float dotX;
   float dotY;
   float dotR;
   
+  //Navn på klasse
+  String name;
+  
+  //Om spilleren 
   public boolean grabbed = false;
   
-  SlideBar(float objX, float objY, float objSize, float objMaxPriority){
+  SlideBar(String objName, float objX, float objY, float objSize, float objMaxPriority){
+    name = objName;
+    
     x = objX;
     y = objY;
     size = objSize;
@@ -31,11 +39,12 @@ class SlideBar{
       push();
       textSize(currentPriorityTextSize);
       text(currentPriority, x + size + 50, y + currentPriorityTextSize/2);
+      text(name, x, y - size/15);
       pop();
     }
   }
   
-  void changeOption() {
+  void changeOption(){
     if(mouseX >= dotX - dotR/2 && mouseX <= dotX + dotR/2 && mouseY >= dotY - dotR/2 && mouseY <= dotY + dotR/2){
       grabbed = true;
     }
@@ -61,7 +70,7 @@ class SlideBar{
       currentPriority = 4;
     }
       
-      //Ancient ikke hardcoded kode:
+      //Ancient ikke hardcoded kode, med smooth sliding:
       /*dotX = mouseX;
       if(mouseX < x){
         dotX = x;
