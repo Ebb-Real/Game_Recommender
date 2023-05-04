@@ -1,3 +1,5 @@
+import java.util.Map;
+
 float background_r = 0;
 float background_g = 0;
 float background_b = 0;
@@ -7,8 +9,13 @@ SlideBar StoryRoleplaySlider = new SlideBar(100, 200, 300, 5);
 SlideBar MultiplayerSlider = new SlideBar(100, 300, 300, 5);
 SlideBar ManagementSlider = new SlideBar(100, 400, 300, 5);
 
+HashMap<String, ArrayList<Integer>> gameData;
+
 void setup(){
   size(1500, 800);
+  gameData = formatData(loadStrings("data.txt"));
+  
+  hentBedsteMatch(gameData);
 }
 
 void draw(){
@@ -17,7 +24,7 @@ void draw(){
   StoryRoleplaySlider.draw();
   MultiplayerSlider.draw();
   ManagementSlider.draw();
-  println(stardewValley[0]);
+  println(lowestgame);
 }
 
 void mouseDragged(){
