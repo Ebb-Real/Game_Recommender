@@ -5,7 +5,8 @@ float background_b = 0;
 
 public boolean evaluate;
 
-Movie video;
+Movie video = new Movie(this, "movie480_vp9.mov");
+
 SlideBar CombatSlider = new SlideBar("Combat",100, 100, 300, 5);
 SlideBar StoryRoleplaySlider = new SlideBar("Story and Roleplay",100, 200, 300, 5);
 SlideBar MultiplayerSlider = new SlideBar("Multiplayer",100, 300, 300, 5);
@@ -15,7 +16,6 @@ EvaluateButton EvaluationButton = new EvaluateButton(100, 550, 300, 40);
 
 void setup(){
   size(1500, 800);
-  video=new Movie(this, "movie480_vp9.mov");
   video.loop();
 }
 

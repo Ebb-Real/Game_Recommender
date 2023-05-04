@@ -5,7 +5,7 @@ class Button{
   float sizeY;
   
   float r = 0;
-  float g = 200;
+  float g = 0;
   float b = 0;
   
   Button(float objX, float objY, float objSizeX, float objSizeY){
