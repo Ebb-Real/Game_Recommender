@@ -1,4 +1,6 @@
 import processing.video.*;
+import java.util.Map;
+
 float background_r = 0;
 float background_g = 0;
 float background_b = 0;
@@ -16,11 +18,15 @@ SlideBar ManagementSlider = new SlideBar("Management",100, 450, 300, 5);
 
 EvaluateButton EvaluationButton = new EvaluateButton(100, 600, 300, 40);
 
+HashMap<String, ArrayList<Integer>> gameData;
+
 void setup(){
   size(1500, 800);
   video = new Movie(this, "SlimeRancher.mov");
   video.loop();
   img = loadImage("SlimeRancher.jpg");
+  gameData = formatData(loadStrings("data.txt"));
+  hentBedsteMatch(gameData);
 }
 
 void draw(){
@@ -32,6 +38,7 @@ void draw(){
   MultiplayerSlider.draw();
   ManagementSlider.draw();
   EvaluationButton.draw();
+  println(lowestgame);
 }
 
 void mouseDragged(){

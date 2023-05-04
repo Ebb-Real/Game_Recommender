@@ -5,7 +5,7 @@ class SlideBar{
   float maxPriority;
   
   //Værdien som slideren sidder på, altså vægten
-  int currentPriority = 1;
+  public int currentPriority = 1;
   float currentPriorityTextSize = 30;
   
   //Slider-priks værdier
