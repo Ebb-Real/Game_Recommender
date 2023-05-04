@@ -19,6 +19,7 @@ SlideBar ManagementSlider = new SlideBar("Management",100, 450, 300, 5);
 EvaluateButton EvaluationButton = new EvaluateButton(100, 600, 300, 40);
 
 HashMap<String, ArrayList<Integer>> gameData;
+ArrayList<Integer> selections = new ArrayList<Integer>();
 
 void setup(){
   size(1500, 800);
@@ -26,7 +27,7 @@ void setup(){
   video.loop();
   img = loadImage("SlimeRancher.jpg");
   gameData = formatData(loadStrings("data.txt"));
-  hentBedsteMatch(gameData);
+  addSelections();
 }
 
 void draw(){
@@ -38,7 +39,7 @@ void draw(){
   MultiplayerSlider.draw();
   ManagementSlider.draw();
   EvaluationButton.draw();
-  println(lowestgame);
+ 
 }
 
 void mouseDragged(){
@@ -60,5 +61,24 @@ void movieEvent(Movie video){
 }
 
 void mouseClicked(){
-  EvaluationButton.onClick();
+  if(EvaluationButton.onClick()) {
+   updateSelections();
+   evaluate = true; 
+   println(selections.get(1));
+   println(hentBedsteMatch(selections));
+  }
+}
+
+void addSelections() {
+  selections.add(CombatSlider.getCurrentPriority());
+  selections.add(StoryRoleplaySlider.getCurrentPriority());
+  selections.add(MultiplayerSlider.getCurrentPriority());
+  selections.add(ManagementSlider.getCurrentPriority()); 
+}
+
+void updateSelections() {
+  selections.set(0, CombatSlider.getCurrentPriority());
+  selections.set(1, StoryRoleplaySlider.getCurrentPriority());
+  selections.set(2, MultiplayerSlider.getCurrentPriority());
+  selections.set(3, ManagementSlider.getCurrentPriority()); 
 }

@@ -5,10 +5,8 @@ class EvaluateButton extends Button{
     super(objX, objY, objSizeX, objSizeY);
   }
   
-  void onClick(){
-    if(mouseOver()){
-      evaluate = true;
-    }
+  boolean onClick(){
+    return mouseOver();
   }
   
   void draw(){

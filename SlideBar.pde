@@ -5,7 +5,7 @@ class SlideBar{
   float maxPriority;
   
   //Værdien som slideren sidder på, altså vægten
-  public int currentPriority = 1;
+   int currentPriority = 1;
   float currentPriorityTextSize = 30;
   
   //Slider-priks værdier
@@ -81,5 +81,9 @@ class SlideBar{
       } */
     
     }
+  }
+  
+  int getCurrentPriority() {
+    return currentPriority;
   }
 }
