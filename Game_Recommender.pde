@@ -15,9 +15,6 @@ SlideBar ManagementSlider = new SlideBar("Management",100, 450, 300, 5);
 EvaluateButton EvaluationButton = new EvaluateButton(100, 600, 300, 40);
 
 //ints for at lave procent baren
-
-
-
 int sx = 1;
 int sy = 3;
 int so = 2;
@@ -49,7 +46,7 @@ void draw(){
   image(video, 1000, 250, 400, 264);
   }
   if(img != null){
-    image(img, 650, 200, 264, 400);
+    image(img, 550, 200, 264, 400);
   }
   CombatSlider.draw();
   StoryRoleplaySlider.draw();
@@ -59,13 +56,13 @@ void draw(){
   
  //koden for at lave en procent bar
 push();
- rect(930,150,50,sxsh);
+ rect(885,150,50,sxsh);
  fill(255,0,0);
- rect(930,150+sxsh,50,sysh);
+ rect(885,150+sxsh,50,sysh);
  fill(0,255,0);
- rect(930,150+sxsh+sysh,50,sosh);
+ rect(885,150+sxsh+sysh,50,sosh);
  fill(0,0,255);
- rect(930,150+sxsh+sysh+sosh,50,stsh);
+ rect(885,150+sxsh+sysh+sosh,50,stsh);
  fill(200,150,100);
  pop();
  println(sx);
