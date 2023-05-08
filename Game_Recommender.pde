@@ -23,17 +23,18 @@ ArrayList<Integer> selections = new ArrayList<Integer>();
 
 void setup(){
   size(1500, 800);
-  video = new Movie(this, "SlimeRancher.mov");
-  video.loop();
-  img = loadImage("SlimeRancher.jpg");
   gameData = formatData(loadStrings("data.txt"));
   addSelections();
 }
 
 void draw(){
   background(background_r, background_g, background_b);
+  if(video != null){
   image(video, 1000, 250, 400, 264);
-  image(img, 650, 200, 264, 400);
+  }
+  if(img != null){
+    image(img, 650, 200, 264, 400);
+  }
   CombatSlider.draw();
   StoryRoleplaySlider.draw();
   MultiplayerSlider.draw();
@@ -66,6 +67,9 @@ void mouseClicked(){
    evaluate = true; 
    println(selections.get(1));
    println(hentBedsteMatch(selections));
+   img = loadImage(hentBedsteMatch(selections) + ".jpg");
+   video = new Movie(this, hentBedsteMatch(selections) + ".mov");
+   video.loop();
   }
 }
 
