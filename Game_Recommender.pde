@@ -81,7 +81,7 @@ void draw(){
   if(evaluateText != ""){
     push();
     fill(108,140,144);
-    rect(evaluateTextX - 15, evaluateTextY-30, 450, 40, 50);
+    rect(evaluateTextX - 25, evaluateTextY-30, 600, 40, 50);
     pop();
   }
   text(evaluateText, evaluateTextX, evaluateTextY);
