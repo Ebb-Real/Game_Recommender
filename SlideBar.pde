@@ -27,7 +27,7 @@ class SlideBar{
     size = objSize;
     maxPriority = objMaxPriority;
     
-    dotX = objX + size/20;
+    dotX = x;
     dotY = objY + size/60;
     dotR = objSize/10;
   }
