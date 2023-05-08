@@ -5,7 +5,7 @@ float background_r = 0;
 float background_g = 0;
 float background_b = 0;
 
-String menuText = "Hvilke egenskaber foretrkækker du i dine spil?";
+String menuText = "Hvilke egenskaber foretrækker du i dine spil?";
 float menuTextX = 50;
 float menuTextY = 75;
 
@@ -13,7 +13,7 @@ String evaluateText = "";
 float evaluateTextX = 800;
 float evaluateTextY = 75;
 
-PImage img;
+//PImage img;
 PImage background;
 
 public boolean evaluate;
@@ -55,11 +55,11 @@ void draw(){
   image(background, 0, 0, 1500, 800);
   
   if(video != null){
-  image(video, 960, 250, 500, 300);
+  image(video, 700, 175, 750, 450);
   }
-  if(img != null){
+  /* if(img != null){
     image(img, 600, 200, 264, 400);
-  }
+  }*/
   
   CombatSlider.draw();
   StoryRoleplaySlider.draw();
@@ -71,18 +71,18 @@ void draw(){
   textSize(30);
   
   if(menuText != ""){
-  push();
-  fill(0);
-  rect(menuTextX - 15, menuTextY-30, 610, 40, 50);
-  pop();
-  text(menuText, menuTextX, menuTextY);
+    push();
+    fill(0);
+    rect(menuTextX - 15, menuTextY-30, 610, 40, 50);
+    pop();
+    text(menuText, menuTextX, menuTextY);
   }
   
   if(evaluateText != ""){
-  push();
-  fill(0);
-  rect(evaluateTextX - 15, evaluateTextY-30, 450, 40, 50);
-  pop();
+    push();
+    fill(0);
+    rect(evaluateTextX - 15, evaluateTextY-30, 450, 40, 50);
+    pop();
   }
   text(evaluateText, evaluateTextX, evaluateTextY);
   pop();
@@ -90,17 +90,15 @@ void draw(){
   //koden for at lave en procent bar
   if(evaluate){
     push();
-    rect(885,150,50,sxsh);
-    fill(255,0,0);
-    rect(885,150+sxsh,50,sysh);
-    fill(0,255,0);
-    rect(885,150+sxsh+sysh,50,sosh);
-    fill(0,0,255);
-    rect(885,150+sxsh+sysh+sosh,50,stsh);
-    fill(200,150,100);
+    fill(143,174,101);
+    rect(600,150,50,sxsh);
+    fill(194,156,64);
+    rect(600,150+sxsh,50,sysh);
+    fill(108,140,144);
+    rect(600,150+sxsh+sysh,50,sosh);
+    fill(196,229,232);
+    rect(600,150+sxsh+sysh+sosh,50,stsh);
     pop();
-    println(sx);
-    println(sa);
   }
 }
 
@@ -128,7 +126,7 @@ void mouseClicked(){
     updateSelections();
     evaluate = true; 
     println(hentBedsteMatch(selections));
-    img = loadImage(hentBedsteMatch(selections) + ".jpg");
+    //img = loadImage(hentBedsteMatch(selections) + ".jpg");
     video = new Movie(this, hentBedsteMatch(selections) + ".mov");
     video.loop();
   }
