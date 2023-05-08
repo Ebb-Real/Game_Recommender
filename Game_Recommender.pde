@@ -72,7 +72,7 @@ void draw(){
   
   if(menuText != ""){
     push();
-    fill(0);
+    fill(108,140,144);
     rect(menuTextX - 15, menuTextY-30, 610, 40, 50);
     pop();
     text(menuText, menuTextX, menuTextY);
@@ -80,7 +80,7 @@ void draw(){
   
   if(evaluateText != ""){
     push();
-    fill(0);
+    fill(108,140,144);
     rect(evaluateTextX - 15, evaluateTextY-30, 450, 40, 50);
     pop();
   }
