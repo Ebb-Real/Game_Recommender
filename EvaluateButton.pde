@@ -11,7 +11,7 @@ class EvaluateButton extends Button{
   
   void draw(){
     push();
-    fill(r, g, b);
+    fill(143,174,101);
     rect(x, y, sizeX, sizeY);
     fill(255);
     textSize(sizeX/10);
