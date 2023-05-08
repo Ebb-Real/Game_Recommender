@@ -122,10 +122,10 @@ void movieEvent(Movie video){
 
 void mouseClicked(){
   if(EvaluationButton.onClick()) {
-    evaluateText = "Måske vil du kunne lide dette spil:";
     updateSelections();
     evaluate = true; 
     println(hentBedsteMatch(selections));
+    evaluateText = "Måske vil du kunne lide " + hentBedsteMatch(selections);
     //img = loadImage(hentBedsteMatch(selections) + ".jpg");
     video = new Movie(this, hentBedsteMatch(selections) + ".mov");
     video.loop();
