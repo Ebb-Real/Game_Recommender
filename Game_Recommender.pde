@@ -90,14 +90,14 @@ void draw(){
   //koden for at lave en procent bar
   if(evaluate){
     push();
-    rect(885,150,50,sxsh);
-    fill(255,0,0);
-    rect(885,150+sxsh,50,sysh);
-    fill(0,255,0);
-    rect(885,150+sxsh+sysh,50,sosh);
-    fill(0,0,255);
-    rect(885,150+sxsh+sysh+sosh,50,stsh);
-    fill(200,150,100);
+    fill(143,174,101);
+    rect(600,150,50,sxsh);
+    fill(194,156,64);
+    rect(600,150+sxsh,50,sysh);
+    fill(108,140,144);
+    rect(600,150+sxsh+sysh,50,sosh);
+    fill(196,229,232);
+    rect(600,150+sxsh+sysh+sosh,50,stsh);
     pop();
     println(sx);
     println(sa);
