@@ -40,10 +40,6 @@ float sysh = sy*sp/sa;
 float sosh = so*sp/sa;
 float stsh = st*sp/sa;
 
-float background_r = 0;
-float background_g = 0;
-float background_b = 0;
-
 HashMap<String, ArrayList<Integer>> gameData;
 ArrayList<Integer> selections = new ArrayList<Integer>();
 
@@ -59,10 +55,10 @@ void draw(){
   image(background, 0, 0, 1500, 800);
   
   if(video != null){
-  image(video, 950, 250, 500, 300);
+  image(video, 960, 250, 500, 300);
   }
   if(img != null){
-    image(img, 550, 200, 264, 400);
+    image(img, 600, 200, 264, 400);
   }
   
   CombatSlider.draw();
@@ -91,19 +87,21 @@ void draw(){
   text(evaluateText, evaluateTextX, evaluateTextY);
   pop();
 
-//koden for at lave en procent bar
-push();
-rect(885,150,50,sxsh);
-fill(255,0,0);
-rect(885,150+sxsh,50,sysh);
-fill(0,255,0);
-rect(885,150+sxsh+sysh,50,sosh);
-fill(0,0,255);
-rect(885,150+sxsh+sysh+sosh,50,stsh);
-fill(200,150,100);
-pop();
-println(sx);
-println(sa);
+  //koden for at lave en procent bar
+  if(evaluate){
+    push();
+    rect(885,150,50,sxsh);
+    fill(255,0,0);
+    rect(885,150+sxsh,50,sysh);
+    fill(0,255,0);
+    rect(885,150+sxsh+sysh,50,sosh);
+    fill(0,0,255);
+    rect(885,150+sxsh+sysh+sosh,50,stsh);
+    fill(200,150,100);
+    pop();
+    println(sx);
+    println(sa);
+  }
 }
 
 void mouseDragged(){
