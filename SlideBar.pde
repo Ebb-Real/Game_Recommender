@@ -16,10 +16,13 @@ class SlideBar{
   //Navn på klasse
   String name;
   
-  //Om spilleren 
+  //Holdt eller ej
   public boolean grabbed = false;
   
-  SlideBar(String objName, float objX, float objY, float objSize, float objMaxPriority){
+  PImage dotImage;
+  String dotImageName;
+  
+  SlideBar(String objName, float objX, float objY, float objSize, float objMaxPriority, String objDotImageName){
     name = objName;
     
     x = objX;
@@ -30,10 +33,14 @@ class SlideBar{
     dotX = x;
     dotY = objY + size/60;
     dotR = objSize/10;
+    
+    dotImageName = objDotImageName;
   }
   
   void draw(){
     rect(x, y, size, size/30);
+    dotImage = loadImage(dotImageName);
+    image(dotImage, x + size * 1.3, y - 35, size/3.5, size/3.5);
     circle(dotX, dotY, dotR);
     if(currentPriority != 0){
       push();

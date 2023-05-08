@@ -20,10 +20,10 @@ public boolean evaluate;
 
 Movie video;
 
-SlideBar CombatSlider = new SlideBar("Combat",100, 200, 300, 5);
-SlideBar StoryRoleplaySlider = new SlideBar("Story and Roleplay",100, 300, 300, 5);
-SlideBar MultiplayerSlider = new SlideBar("Multiplayer",100, 400, 300, 5);
-SlideBar ManagementSlider = new SlideBar("Management",100, 500, 300, 5);
+SlideBar CombatSlider = new SlideBar("Combat",100, 200, 300, 5, "Combat.png");
+SlideBar StoryRoleplaySlider = new SlideBar("Story and Roleplay",100, 300, 300, 5, "StoryRoleplay.png");
+SlideBar MultiplayerSlider = new SlideBar("Multiplayer",100, 400, 300, 5, "Multiplayer.png");
+SlideBar ManagementSlider = new SlideBar("Management",100, 500, 300, 5, "Management.png");
 
 EvaluateButton EvaluationButton = new EvaluateButton(100, 600, 300, 40);
 
@@ -32,7 +32,7 @@ ArrayList<Integer> selections = new ArrayList<Integer>();
 
 void setup(){
   size(1500, 800);
-  background = loadImage("Background");
+  background = loadImage("Background.jpg");
   gameData = formatData(loadStrings("data.txt"));
   addSelections();
 }
